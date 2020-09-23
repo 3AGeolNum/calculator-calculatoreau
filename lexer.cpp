@@ -21,9 +21,9 @@ Bloc lexer(const string& input) {
 		//si on rencontre un opérateur
 		if (operateurs.find(input[position]) >= 0)
 		{
-			liste_des_blocs[position_dans_array] = new Bloc(0, atof(nombre.c_str()), &liste_des_blocs[--position_dans_array], &liste_des_blocs[++position_dans_array]); //bloc nombre
+			liste_des_blocs[position_dans_array] = new Bloc(0, atof(nombre.c_str()), &liste_des_blocs[--position_dans_array]); //bloc nombre
 			position_dans_array++;
-			liste_des_blocs[position_dans_array] = new Bloc(1, input[position], &liste_des_blocs[--position_dans_array], &liste_des_blocs[++position_dans_array]); //bloc opérateur
+			liste_des_blocs[position_dans_array] = new Bloc(1, input[position], &liste_des_blocs[position_dans_array-2], &liste_des_blocs[--position_dans_array], &liste_des_blocs[++position_dans_array]); //bloc opérateur
 		}
 		else
 			string + input[position];
