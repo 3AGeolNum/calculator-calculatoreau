@@ -11,7 +11,8 @@ Bloc lexer(const string& input) {
 	**/
 
 	//Listes des symboles autorisés.
-	String chiffres = "0123456789";
+	//String chiffres = "0123456789";
+>>>>>>> Stashed changes
 	String operateurs = "+-*/";
 	DynArray<Bloc*> liste_des_blocs(input.size());
 	int position_dans_array = 0; //position ou ranger le prochain bloc dans la liste des blocs.
