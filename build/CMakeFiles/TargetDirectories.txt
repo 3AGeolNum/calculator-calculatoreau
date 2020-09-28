@@ -1,4 +1,0 @@
-O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/CMakeFiles/ALL_BUILD.dir
-O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/CMakeFiles/ZERO_CHECK.dir
-O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/src/calc_lib/CMakeFiles/calclib.dir
-O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/mains/CMakeFiles/CalculetteProject.dir
