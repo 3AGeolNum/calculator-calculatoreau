@@ -1,7 +1,7 @@
 #include "evaluator.h"
 #include <iostream>
 
-void Bloc::evaluator(Bloc const& a, Bloc const& b)
+void Bloc<T>::evaluator(Bloc* const& a, Bloc* const& b)
 {
 	if (a*b)
 	{
