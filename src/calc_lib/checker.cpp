@@ -1,4 +1,4 @@
-#include<checker.h>
+#include <calc_lib/checker.h>
 
 
 Checker::Checker(std::string str): input_(str){

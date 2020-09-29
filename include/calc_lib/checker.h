@@ -1,3 +1,6 @@
+#ifndef CHECKER_h
+#define CHECKER_h
+
 #include <iostream>
 
 class Checker{
