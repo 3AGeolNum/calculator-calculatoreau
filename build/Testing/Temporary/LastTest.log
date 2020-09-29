@@ -1,0 +1,43 @@
+Start testing: Sep 29 15:45 Paris, Madrid (heure d?été)
+----------------------------------------------------------
+1/1 Testing: test_lexer
+1/1 Test: test_lexer
+Command: "O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/tests/Debug/test_lexer.exe"
+Directory: O:/Documents/ENSG_3A/Projet_calculette/Clonage/build/tests
+"test_lexer" start time: Sep 29 15:45 Paris, Madrid (heure d?été)
+Output:
+----------------------------------------------------------
+coucou je suis un tableau dynamique de taille 11
+coucou je suis un bloc de nature 0et qui contient -45
+valeur-45
+coucou je suis un bloc de nature 1et qui contient -
+valeur-
+coucou je suis un bloc de nature 0et qui contient 9
+valeur9
+coucou je suis un bloc de nature 1et qui contient +
+valeur+
+coucou je suis un bloc de nature 0et qui contient 89
+valeur89
+coucou je suis un bloc de nature 1et qui contient *
+valeur*
+coucou je suis un bloc de nature 0et qui contient -4
+valeur-4
+Fin lexer !
+coucou je suis un tableau dynamique copié de taille 11
+j'ai atomisé le tableau de taille 11
+Element de rang 0 est -45
+Element de rang 1 est -
+Element de rang 2 est 9
+Element de rang 3 est +
+Element de rang 4 est 89
+Element de rang 5 est *
+Element de rang 6 est -4
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"test_lexer" end time: Sep 29 15:45 Paris, Madrid (heure d?été)
+"test_lexer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 29 15:45 Paris, Madrid (heure d?été)
