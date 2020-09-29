@@ -1,33 +1,35 @@
 #include "evaluator.h"
 #include <iostream>
 
-void Bloc::evaluator (DynArray<Bloc*> const& a, DynArray<Bloc*> const& op DynArray<Bloc*> const& b)
+DynArray<Bloc*> Evaluator(DynArray<Bloc*> const& lhs, DynArray<Bloc*> const& op DynArray<Bloc*> const& rhs)
 {
 	double calc;
-	for (int ia(0); ia < calc.size(); ++ia )
-	{
+	parser(DynArray<Bloc*> const& op)
+		for (int num_bloc = 1; num_bloc < op.size(); num_bloc++) {
+			switch (DynArray<Bloc*>) {
+			case Bloc::Add: return lhs + rhs;
+			case Bloc::Sub: return lhs - rhs;
+			case Bloc::Mul: return lhs * rhs;
+			case Bloc::Div: return lhs / rhs;
 
-	if (op ="*")
-	{
-	calc = a * b;
-	}
-	else if (op = "+")
-	{
+}
 
-		calc = a + b;
+void Bloc::Add()
+{
 
-	}
-	else if (op = "-")
-	{
+}
 
-		calc = a - b;
+void Bloc::Sub()
+{
 
-	}
-	else if (op = "/")
-	{
+}
 
-		calc = a / b;
+void Bloc::Mul()
+{
 
-	}
-	}
+}
+
+void Bloc::Div()
+{
+
 }
