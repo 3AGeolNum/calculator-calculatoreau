@@ -13,23 +13,23 @@ DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 	
 } 
 
-void organize_priority_operators(const DynArray<Bloc*>& calcul_initial){
+DynArray<Bloc*> organize_priority_operators(const DynArray<Bloc*>& calcul_initial){
 	
 	
-	DynArray<Bloc*> operator_array = generate_operator_array(calcul_initial);
-	DynArray<Bloc*> operator_array_ordonated(operator_array.size());
+	DynArray<Bloc*> operator_array = generate_operator_array( calcul_initial );
+	DynArray<Bloc*> operator_array_ordonated( operator_array.size() );
 	operator_array_ordonated.resize(0);
 	
-	
+	// for the first iteration we are just interest of * and / 
+	edit_links1( operator_array, operator_array_ordonated, calcul_initial )
 	
 	while( operator_array_ordonated.size() != operator_array.size()){
 		
-		
-		
+		edit_links( operator_array, operator_array_ordonated, calcul_initial )
 	}
 }
 
-bool link_bloc(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial, int num_bloc1, int num_bloc2, bool if_precedent_edited){
+bool link_bloc( DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial, int num_bloc1, int num_bloc2, bool if_precedent_edited ){
 	if ( !if_precedent_edited ){
 			
 				operator_array[num_ope]->set_ptr_bas1( calcul_initial[num_bloc1] );
@@ -43,7 +43,7 @@ bool link_bloc(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_
 			}
 }
 
-void edit_links1(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial){
+void edit_links1( DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial ){
 	std::string multiply, divise = "*", "/";
 	bool if_precedent_edited = False; // true si le bloc de l'opérateur précedent à été édité
 	
@@ -51,7 +51,10 @@ void edit_links1(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_arra
 		
 		if (operator_array->get_item() == multiply || operator_array->get_item() == divise ){
 			
-			if_precedent_edited = link_bloc( operator_array, operator_array_ordonated, calcul_initial, 2 * num_bloc, 2 * (num_bloc + 1), if_precedent_edited );
+			//determination of side-bloc links
+			int num_bloc1 = num_bloc * 2;
+			int num_bloc2 = 2 * (num_bloc + 1);
+			if_precedent_edited = link_bloc( operator_array, operator_array_ordonated, calcul_initial, num_bloc1, num_bloc2, if_precedent_edited );
 		}
 		else{
 			if_precedent_edited = False;
@@ -60,15 +63,20 @@ void edit_links1(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_arra
 }
 
 		
-void edit_links(DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial){
+void edit_links( DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, const DynArray<Bloc*>& calcul_initial ){
 	std::string multiply, divise = "*", "/";
 	bool if_precedent_edited = False; // true si le bloc de l'opérateur précedent à été édité
 	
 	for( int num_ope = 0; num_ope < operator_array.size(); num_bloc++ ){
 		
-		if( operator_array[num_ope]->get_ptr_bas1 == nullptr ) {
+		if( operator_array[num_ope]->get_ptr_bas1 == nullptr && if_precedent_edited ) {
 		
-			
+			int num_bloc1 = ;
+			int num_bloc2 = ;
+			if_precedent_edited = link_bloc( operator_array, operator_array_ordonated, calcul_initial, num_bloc1, num_bloc2, if_precedent_edited );
+		}
+		else{
+			if_precedent_edited = False;
 		}
 	}
 }	
