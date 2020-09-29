@@ -14,7 +14,7 @@ public:
 	int size() const;
 	void resize(int new_size); //attention
 	DynArray<T>& operator=(DynArray<T> const& other);
-	T& push_back( const T& elt );
+	void push_back( const T& elt );
 	const T& operator[](int index ) const;
 	T& operator[](int index );
 
@@ -62,7 +62,7 @@ template <class T> DynArray<T>& DynArray<T>::operator=(const DynArray<T>& other)
 	std::cout << "coucou je suis un tableau dynamique copié par opérateur = et de taille " << size_ << std::endl;
 }
 
-template <class T> T& DynArray<T>::push_back(const T& elt) {
+template <class T> void DynArray<T>::push_back(const T& elt) {
 	assert(size_ < capacity_);
 	elts_[size_] = elt;
 	size_ += 1;

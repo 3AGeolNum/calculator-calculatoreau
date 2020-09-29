@@ -5,7 +5,7 @@ target_sources(${target_name}
 PRIVATE
 "${PROJECT_SOURCE_DIR}/src/calc_lib/lexer.cpp"
 "${PROJECT_SOURCE_DIR}/src/calc_lib/bloc.cpp"
-"${PROJECT_SOURCE_DIR}/include/calc_lib/parser.cpp"
+"${PROJECT_SOURCE_DIR}/src/calc_lib/parser.cpp"
 #"${PROJECT_SOURCE_DIR}/src/calc_lib/DynArray.cpp"
 PRIVATE
 "${PROJECT_SOURCE_DIR}/include/calc_lib/lexer.h"
@@ -16,6 +16,7 @@ PRIVATE
 
 target_include_directories(${target_name}
 PUBLIC
-"${PROJECT_SOURCE_DIR}/include"
-"${PROJECT_BINARY_DIR}"
+	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+	$<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
+	$<INSTALL_INTERFACE:include>
 )

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <CalculetteProject.h>
-#include <calc_lib/lexer.h>
+#include <calc_lib\lexer.h>
 
 
 DynArray<Bloc*> lexer(const std::string& input) {
