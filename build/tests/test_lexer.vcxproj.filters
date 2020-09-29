@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="O:\Documents\ENSG_3A\Projet_calculette\Clonage\tests\test_lexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="O:\Documents\ENSG_3A\Projet_calculette\Clonage\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B3A99DFA-2C88-3B78-A5FB-378E5A4197C8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
