@@ -6,7 +6,7 @@
 
 class Bloc{
 	public:
-		Bloc( bool nature, std::string item, Bloc* ptr_haut = nullptr , Bloc* ptr_bas1 = nullptr, Bloc* ptr_bas2 = nullptr);
+		Bloc( bool nature=false, std::string item="", Bloc* ptr_haut = nullptr , Bloc* ptr_bas1 = nullptr, Bloc* ptr_bas2 = nullptr);
 		~Bloc();
 		
 		void set_nature(bool nature); //0 for nomber and 1 for operator
