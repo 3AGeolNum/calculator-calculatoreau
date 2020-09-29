@@ -1,0 +1,2 @@
+#define CalculetteProject_VERSION_MAJOR @CalculetteProject_VERSION_MAJOR@
+#define CalculetteProject_VERSION_MINOR @CalculetteProject_VERSION_MINOR@
