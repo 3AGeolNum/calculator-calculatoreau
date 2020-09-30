@@ -12,7 +12,8 @@ int main(){
 	DynArray<Bloc*> retour (lexer(chaine_test));
 	//Affichage du DynArray.
 	for (int ia = 0 ; ia < retour.size(); ++ia){
-		if(retour[ia]==nullptr){
-			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;}
+		
+
+			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;
 	}
 }

@@ -23,7 +23,7 @@ private:
 	int capacity_;
 	int size_;
 };
-template <class T> DynArray<T>::DynArray(int size) : size_(size), elts_(new T[2 * size]), capacity_(2 * size) {
+template <class T> DynArray<T>::DynArray(int size) : size_(size), elts_(new T[size]), capacity_(size) {
 	std::cout << "coucou je suis un tableau dynamique de taille " << size_ << std::endl;
 	assert(size >= 0);
 }
@@ -39,7 +39,7 @@ template <class T> T& DynArray<T>::operator[](int index) {
 }
 
 template <class T> const T& DynArray<T>::operator[](int index) const {
-	assert(index >= 0 && index < size_);
+	//assert(index >= 0 && index < size_);
 	return elts_[index];
 }
 template <class T> DynArray<T>::DynArray(const DynArray<T>& other) : size_(other.size_), elts_(new T[other.capacity_]), capacity_(other.capacity_) {

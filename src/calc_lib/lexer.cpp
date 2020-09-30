@@ -5,6 +5,19 @@
 #include <calc_lib/lexer.h>
 
 
+void copy_local(DynArray<Bloc*>& new_tab, const DynArray<Bloc*>& local_tab_copied) {
+	for (int ia = 0; ia < new_tab.size(); ia++) {
+		new_tab[ia] = local_tab_copied[ia];
+	}
+}
+
+DynArray<Bloc*> cleaner_tab(const DynArray<Bloc*>& other, int size){
+	
+	DynArray<Bloc*> modified(size);
+	copy_local(modified, other);
+	return modified;
+}
+
 DynArray<Bloc*> lexer(const std::string& input) {
 	/**
 	Fonction qui prend une chaine de caractères en entrée correspondant aux opérations.
@@ -44,6 +57,7 @@ DynArray<Bloc*> lexer(const std::string& input) {
 	liste_des_blocs[position_dans_array] = new Bloc(false, nombre);
 	std::cout << "valeur" << liste_des_blocs[position_dans_array]->get_valeur() << std::endl;
 	std::cout << "Fin lexer !" << std::endl;
-	return liste_des_blocs;
+	std::cout << "Taille new " << cleaner_tab(liste_des_blocs, position_dans_array).size() << "taille ancien" << liste_des_blocs.size() << std::endl;
+	return cleaner_tab(liste_des_blocs, position_dans_array);
 }
 
