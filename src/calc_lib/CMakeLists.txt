@@ -5,7 +5,6 @@ target_sources(${target_name}
 PRIVATE
 "${PROJECT_SOURCE_DIR}/src/calc_lib/lexer.cpp"
 "${PROJECT_SOURCE_DIR}/src/calc_lib/bloc.cpp"
-#"${PROJECT_SOURCE_DIR}/src/calc_lib/DynArray.cpp"
 PRIVATE
 "${PROJECT_SOURCE_DIR}/include/calc_lib/lexer.h"
 "${PROJECT_SOURCE_DIR}/include/calc_lib/bloc.h"
@@ -25,5 +24,7 @@ export(TARGETS ${target_name}
 
 install(TARGETS ${target_name} EXPORT ${target_name} DESTINATION ${PROJECT_BINARY_DIR}/install/lib)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION ${PROJECT_BINARY_DIR}/install/include/ )
+
+install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectConfig.h DESTINATION ${PROJECT_BINARY_DIR}/install/include/ )
 
 install(EXPORT ${target_name} FILE calclib_target.cmake DESTINATION ${PROJECT_BINARY_DIR}/install/cmake/)

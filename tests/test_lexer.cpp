@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <CalculetteProject.h>
+#include <CalculetteProjectConfig.h>
 #include <calc_lib/lexer.h>
 #include <calc_lib/bloc.h>
 #include <calc_lib/DynArray.h>
@@ -12,8 +12,9 @@ int main(){
 	DynArray<Bloc*> retour (lexer(chaine_test));
 	//Affichage du DynArray.
 	for (int ia = 0 ; ia < retour.size(); ++ia){
-		if(retour[ia]==nullptr){
-			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;}
+		
+
+			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;
 	}
 
 	return 0;
