@@ -1,7 +1,7 @@
 //input chaine de caractère
 #include <string>
 #include <iostream>
-#include <CalculetteProject.h>
+#include <CalculetteProjectConfig.h>
 #include <calc_lib/lexer.h>
 
 
