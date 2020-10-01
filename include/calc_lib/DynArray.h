@@ -2,7 +2,7 @@
 #define DYNARRAY_h
 
 #include <iostream>
-#include<assert.h>
+#include <assert.h>
 
 template <class T> class DynArray {
 public:
@@ -14,9 +14,11 @@ public:
 	int size() const;
 	void resize(int new_size); //attention
 	DynArray<T>& operator=(DynArray<T> const& other);
-	T& push_back( const T& elt );
+	int push_back( const T& elt );
 	const T& operator[](int index ) const;
 	T& operator[](int index );
+	void grow();
+	void copy(const T* from, T* to);
 
 private:
 	T* elts_;
@@ -24,12 +26,11 @@ private:
 	int size_;
 };
 template <class T> DynArray<T>::DynArray(int size) : size_(size), elts_(new T[size]), capacity_(size) {
-	std::cout << "coucou je suis un tableau dynamique de taille " << size_ << std::endl;
+	std::cout << "tableau dynamique de taille " << size_ << std::endl;
 	assert(size >= 0);
 }
 
 template <class T> DynArray<T>::~DynArray() {
-	std::cout << "j'ai atomisé le tableau de taille " << size_ << std::endl;
 	delete[] elts_;
 }
 
@@ -62,11 +63,35 @@ template <class T> DynArray<T>& DynArray<T>::operator=(const DynArray<T>& other)
 	std::cout << "coucou je suis un tableau dynamique copié par opérateur = et de taille " << size_ << std::endl;
 }
 
-template <class T> T& DynArray<T>::push_back(const T& elt) {
-	assert(size_ < capacity_);
+template <class T> void DynArray<T>::grow()
+{
+	std::cout << "==> DynArray<T>::grow" << std::endl;
+	capacity_ *= 2;
+	T* bigger_elets = new T[capacity_];
+	copy(elts_, bigger_elets);
+	delete[] elts_;
+	elts_ = bigger_elets;
+}
+
+template <class T> void DynArray<T>::copy(const T* from, T* to)
+{
+	for (int i = 0; i < size_; i++)
+	{
+		to[i] = from[i];
+	}
+	std::cout << "DynArray<T>::copy " << std::endl;
+}
+
+template <class T> int DynArray<T>::push_back(const T& elt) {
+	if (size_ == capacity_)
+	{
+		grow();
+	}
 	elts_[size_] = elt;
-	size_ += 1;
-	std::cout << "on vient d'ajouter l'element " << elt << " a la fin du tableau" << std::endl;
+	size_++;
+	std::cout << "DynArray<T>::pushback " << elt << std::endl;
+
+	return size_ - 1;
 }
 
 template <class T> int DynArray<T>::size() const {
