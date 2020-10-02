@@ -19,22 +19,30 @@ void Checker::check_pos(int pos){
 	if (pos == -1) {
                 	std::cout << " is a non valid element. Only numbers integer or float and  basic operators (*,+,-,/) are authorized."<< std::endl;
                 }
-                else if (pos > 10){
-                        op_ += 1;
-                        std::cout << "operator = " << op_ <<  std::endl;
+        else if (pos > 10 and pos != 12){
+                op_ += 1;
+                std::cout << "operator = " << op_ <<  std::endl;
 
-                        if (op_ == 2){
-                        std::cout << "Invalid argument. Two successive operator are not valid" << std::endl;
+                if (op_ == 2 or min_ != 0){
+                        std::cout << "Invalid argument. Two successive operator that are not minus is not valid" << std::endl;
+			checked_ = false;
                         }
                 }
+	else if (pos == 12){
+		
+		min_ += 1;
 
-                else if (pos == 10){
-			op_ = op_;
-                }
-                else if(pos < 10 and pos >0){
-			op_ = 0;
+		if (min_ >= 3){
+		std::cout << "Invalid argument. More too many minux operator" << std::endl;
+		}
+			
+		}
+        else if(pos < 10 and pos >0){
+		
+		op_ = 0;
+		min_ = 0;
 
-                //Reinitialisation of operator
+                //Reinitialisation of operator and minus
               
                 }
 
@@ -53,7 +61,6 @@ void Checker::check(){
                 int pos = auth_.find(input_[a]);
                 check_pos(pos);
         }
-        checked_ = true;
 
 
 	}
