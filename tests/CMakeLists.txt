@@ -11,3 +11,7 @@ add_test(NAME test_lexer COMMAND test_lexer)
 add_executable(test_parser test_parser.cpp)
 target_link_libraries(test_parser PUBLIC calclib)
 add_test(NAME test_parser COMMAND test_parser)
+
+add_executable(test_evaluator test_evaluator.cpp)
+target_link_libraries(test_evaluator PUBLIC calclib)
+add_test(NAME test_evaluator COMMAND test_evaluator)
