@@ -14,10 +14,7 @@ int main() {
 
 	DynArray<Bloc*> calcul_bloc = lexer(calcul);
 	DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
-	DynArray<Bloc*> evaluated_calcul = evaluator(parsed_bloc);
-
-
-
+	std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
 
 	return 0;
 }

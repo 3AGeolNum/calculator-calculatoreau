@@ -5,11 +5,12 @@
 #include <calc_lib\DynArray.h>
 
 
-double DynArray<Bloc*> evaluator(DynArray<Bloc*> const& calc)
+double evaluator(DynArray<Bloc*>& calc);
 
-double add(lhs, rhs);
-double sub(lhs, rhs);
-double mul(lhs, rhs);
-double div(lhs, rhs);
+double add(double lhs, double rhs);
+double sub(double lhs, double rhs);
+double mul(double lhs, double rhs);
+double div(double lhs, double rhs);
+
 
 #endif //EVALUATOR_INCLUDED
