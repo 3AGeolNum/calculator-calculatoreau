@@ -12,6 +12,7 @@ int main(){
 	std::cin >> calcul ;
 	
 	DynArray<Bloc*> calcul_bloc = lexer( calcul );
+	std::cout << "taille du tableau lexer : " << calcul_bloc.size() << std::endl;
 
 	DynArray<Bloc*> parsed_calcul = parser( calcul_bloc );
 	
