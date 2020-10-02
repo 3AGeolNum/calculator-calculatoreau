@@ -34,6 +34,7 @@ void Checker::check_pos(int pos){
 
 		if (min_ >= 3){
 		std::cout << "Invalid argument. More too many minux operator" << std::endl;
+		checked_ = false ;
 		}
 			
 		}
@@ -65,7 +66,11 @@ void Checker::check(){
 
 	}
 
+bool Checker::get_checked(){
 
+	return checked_;
+
+}
 
 
 
