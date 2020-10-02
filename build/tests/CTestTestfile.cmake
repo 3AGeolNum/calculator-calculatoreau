@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: O:/Documents/calculator-calculatoreau/tests
+# Build directory: O:/Documents/calculator-calculatoreau/build/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(test_lexer "O:/Documents/calculator-calculatoreau/build/tests/Debug/test_lexer.exe")
+  set_tests_properties(test_lexer PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;9;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(test_lexer "O:/Documents/calculator-calculatoreau/build/tests/Release/test_lexer.exe")
+  set_tests_properties(test_lexer PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;9;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(test_lexer "O:/Documents/calculator-calculatoreau/build/tests/MinSizeRel/test_lexer.exe")
+  set_tests_properties(test_lexer PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;9;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(test_lexer "O:/Documents/calculator-calculatoreau/build/tests/RelWithDebInfo/test_lexer.exe")
+  set_tests_properties(test_lexer PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;9;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+else()
+  add_test(test_lexer NOT_AVAILABLE)
+endif()
+if("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(test_checker "O:/Documents/calculator-calculatoreau/build/tests/Debug/test_checker.exe")
+  set_tests_properties(test_checker PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;14;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(test_checker "O:/Documents/calculator-calculatoreau/build/tests/Release/test_checker.exe")
+  set_tests_properties(test_checker PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;14;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(test_checker "O:/Documents/calculator-calculatoreau/build/tests/MinSizeRel/test_checker.exe")
+  set_tests_properties(test_checker PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;14;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+elseif("${CTEST_CONFIGURATION_TYPE}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(test_checker "O:/Documents/calculator-calculatoreau/build/tests/RelWithDebInfo/test_checker.exe")
+  set_tests_properties(test_checker PROPERTIES  _BACKTRACE_TRIPLES "O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;14;add_test;O:/Documents/calculator-calculatoreau/tests/CMakeLists.txt;0;")
+else()
+  add_test(test_checker NOT_AVAILABLE)
+endif()

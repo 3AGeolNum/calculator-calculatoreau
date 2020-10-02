@@ -1,4 +1,3 @@
-#ifndef CHECKER_h
 #define CHECKER_h
 
 #include <iostream>
@@ -18,5 +17,6 @@ private:
 	bool checked_ = true;
 	std::string auth_ = "1234567890 +-*/?,";
 	std::string input_;
+	
 
 };

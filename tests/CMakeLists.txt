@@ -7,3 +7,8 @@ endif()
 add_executable(test_lexer test_lexer.cpp)
 target_link_libraries(test_lexer PUBLIC calclib)
 add_test(NAME test_lexer COMMAND test_lexer)
+
+
+add_executable(test_checker test_checker.cpp)
+target_link_libraries(test_checker PUBLIC calclib)
+add_test(NAME test_checker COMMAND test_checker)

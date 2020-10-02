@@ -1,11 +1,12 @@
 #include <iostream>
 #include <calc_lib\checker.h>
+#include <string>
 
 
 
 
 bool is_input_empty(std::string str){
-	return str.empty() or str.find_first_not_of(" ") == std::string::npos or str.find_first_not_of("	") == std::string::npos;
+	return str.empty() || str.find_first_not_of(" ") == std::string::npos || str.find_first_not_of("	") == std::string::npos;
 }
 
 
@@ -27,7 +28,7 @@ if (pos == -1) {
                 else if (pos == 10){
 			return op;
                 }
-                else if(pos < 10 and pos >0){
+                else if(pos < 10 && pos >0){
 
                 //Reinitialisation of operator
                 return 0;
@@ -60,10 +61,10 @@ int main (){
 	std::string in;
 	std::cout << "Enter your equation, to exit enter quit" << std::endl ;
 	while ( in != "quit"){
-	getline (std::cin, in);
+	std::getline (std::cin , in);
 	Checker checke = Checker(in);
 	checke.check();
-	std::cout << in << std::endl;
+	std::cout << "Votre équation est :" << in << std::endl;
 	}
 	return 0;
 
