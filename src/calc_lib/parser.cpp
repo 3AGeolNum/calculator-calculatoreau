@@ -3,7 +3,6 @@
 #define calcul_parsing
 #include <calc_lib\lexer.h>
 
-// in this fonction we create new blocs we may dont forget to delete it in the calculator
 DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 
 	DynArray<Bloc*> operator_array((calcul_initial.size()-1)/2);
@@ -11,8 +10,7 @@ DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 	for( int num_bloc = 1; num_bloc < calcul_initial.size(); num_bloc++ ){
 		
 		if( calcul_initial[num_bloc]->get_nature() ){
-			Bloc* current_bloc_ptr = new Bloc(*calcul_initial[num_bloc]);
-			operator_array[position_operator_array] = current_bloc_ptr;
+			operator_array[position_operator_array] = calcul_initial[num_bloc];
 			
 			std::cout << operator_array[position_operator_array]->get_valeur() << std::endl;
 			position_operator_array += 1;
