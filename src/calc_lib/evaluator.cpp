@@ -3,119 +3,56 @@
 #include <iostream>
 #include <string>
 
-double evaluator(DynArray<Bloc*>& parsed_calcul )
+std::string evaluator(DynArray<Bloc*>& parsed_calcul)
 {
-
-	for (int ia = 0; ia < parsed_calcul.size() -1; ++ia) {
+	std::string res;
+	for (int ia = 0; ia < parsed_calcul.size(); ++ia) {
 		
-		double lhs = atof(((parsed_calcul[ia]->get_ptr_bas1())->get_valeur()).c_str());
-		double rhs = atof(((parsed_calcul[ia]->get_ptr_bas2())->get_valeur()).c_str()); 
+		/* left and right terms are obtained with the values of bottom bloc pointers. 
+		 The expression atof interprete the content as a floating point number and returns its value as a double 
+		 */
 
-		std::cout << "lhs  " << lhs <<  " " << ia << std::endl;
-		std::cout << "rhs  " << rhs << " " << ia << std::endl;
+		double lhs = atof(((parsed_calcul[ia]->get_ptr_bas1())->get_valeur()).c_str()); // left term of the operation
+		double rhs = atof(((parsed_calcul[ia]->get_ptr_bas2())->get_valeur()).c_str()); // right term of the operation
+
+		/* loop to do all the operations in the order in which the blocks are received by the parser
+		*/
 
 		if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "+")
 		{
-			parsed_calcul[ia+1]->set_valeur(std::to_string(add(lhs, rhs)));
+			res = std::to_string(add(lhs, rhs));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "-")
 		{
-			parsed_calcul[ia+1]->set_valeur(std::to_string(sub(lhs, rhs)));
+			res = std::to_string(sub(lhs, rhs));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "*")
 		{
-			parsed_calcul[ia+1]->set_valeur(std::to_string(mul(lhs, rhs)));
+			res = std::to_string(mul(lhs, rhs));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "/")
 		{
-			parsed_calcul[ia+1]->set_valeur(std::to_string(div(lhs, rhs)));
+			res = std::to_string(div(lhs, rhs));
 		}
 
-			/*
-
-		enum Opr {+, -, =, /};
-		Opr op = +;
-		switch (op)
-		// switch (std::string(parsed_calcul[ia]->get_valeur()),0,1) 
-		{
-		case +:
-		    parsed_calcul[ia+1] = add(lhs, rhs);
-			break;
-		case -:
-			parsed_calcul[ia + 1] = sub(lhs, rhs);
-			break;
-		case *:
-			parsed_calcul[ia + 1] = mul(lhs, rhs);
-			break;
-		case /:
-			parsed_calcul[ia + 1] = div(lhs, rhs);
-			break;
-		default:
-			break;
-		} */
+		parsed_calcul[ia]->set_valeur(res);
 	}
-	
-	double lhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas1())->get_valeur()).c_str());
-	double rhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas2())->get_valeur()).c_str()); 
-
-	if (std::string(parsed_calcul[parsed_calcul.size() - 1]->get_valeur(), 0, 1) == "+")
-	{
-		return(add(lhs, rhs));
-	}
-	else if (std::string(parsed_calcul[parsed_calcul.size() - 1]->get_valeur(), 0, 1) == "-")
-	{
-		return(sub(lhs, rhs));
-	}
-	else if (std::string(parsed_calcul[parsed_calcul.size() - 1]->get_valeur(), 0, 1) == "*")
-	{
-		return(mul(lhs, rhs));
-	}
-	else
-	{
-		return(div(lhs, rhs));
-	}
-
-
-
-	/* 
-	switch (std::string(parsed_calcul[parsed_calcul.size()-1]->get_valeur()),0,1) {
-		double lhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas1())->get_valeur()).c_str());
-		double rhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas2())->get_valeur()).c_str());
-	case "+":
-		return add(lhs, rhs);
-		break;
-	case "-":
-		return sub(lhs, rhs);
-		break;
-	case "*":
-		return mul(lhs, rhs);
-		break;
-	case "/":
-		return div(lhs, rhs);
-		break;
-	default:
-		break;
-	} */
-	
+	return res;
 }
 
 
-double add(double lhs, double rhs)
-{
+double add(double lhs, double rhs) {
 	return lhs + rhs;
 }
 
-double sub(double lhs, double rhs)
-{
+double sub(double lhs, double rhs) {
 	return lhs - rhs;
 }
 
-double mul(double lhs, double rhs)
-{
+double mul(double lhs, double rhs) {
 	return lhs * rhs;
 }
 
-double div(double lhs, double  rhs)
-{
+double div(double lhs, double  rhs) {
 	return lhs / rhs;
 }
