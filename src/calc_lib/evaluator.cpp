@@ -9,23 +9,26 @@ double evaluator(DynArray<Bloc*>& parsed_calcul )
 	for (int ia = 0; ia < parsed_calcul.size() -1; ++ia) {
 		
 		double lhs = atof(((parsed_calcul[ia]->get_ptr_bas1())->get_valeur()).c_str());
-		double rhs = atof(((parsed_calcul[ia]->get_ptr_bas2())->get_valeur()).c_str()); // Attention : probleme parser, si ca marche pas mettre une valeur fixe a rhs
+		double rhs = atof(((parsed_calcul[ia]->get_ptr_bas2())->get_valeur()).c_str()); 
+
+		std::cout << "lhs  " << lhs <<  " " << ia << std::endl;
+		std::cout << "rhs  " << rhs << " " << ia << std::endl;
 
 		if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "+")
 		{
-			parsed_calcul[ia + 1]->set_valeur(std::to_string(add(lhs, rhs)));
+			parsed_calcul[ia+1]->set_valeur(std::to_string(add(lhs, rhs)));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "-")
 		{
-			parsed_calcul[ia + 1]->set_valeur(std::to_string(sub(lhs, rhs)));
+			parsed_calcul[ia+1]->set_valeur(std::to_string(sub(lhs, rhs)));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "*")
 		{
-			parsed_calcul[ia + 1]->set_valeur(std::to_string(mul(lhs, rhs)));
+			parsed_calcul[ia+1]->set_valeur(std::to_string(mul(lhs, rhs)));
 		}
 		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "/")
 		{
-			parsed_calcul[ia + 1]->set_valeur(std::to_string(div(lhs, rhs)));
+			parsed_calcul[ia+1]->set_valeur(std::to_string(div(lhs, rhs)));
 		}
 
 			/*
@@ -53,7 +56,7 @@ double evaluator(DynArray<Bloc*>& parsed_calcul )
 	}
 	
 	double lhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas1())->get_valeur()).c_str());
-	double rhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas2())->get_valeur()).c_str()); // Attention : probleme parser, si ca marche pas mettre une valeur fixe a rhs
+	double rhs = atof(((parsed_calcul[parsed_calcul.size() - 1]->get_ptr_bas2())->get_valeur()).c_str()); 
 
 	if (std::string(parsed_calcul[parsed_calcul.size() - 1]->get_valeur(), 0, 1) == "+")
 	{
