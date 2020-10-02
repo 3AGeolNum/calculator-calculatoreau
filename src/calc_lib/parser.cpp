@@ -21,20 +21,35 @@ DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 	
 } 
 
-void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& calcul_initial,int num_ope ){
-	
+void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& calcul_initial,int num_ope, bool second_iteration){
+
 	int num_bloc1 = num_ope * 2;
 	int num_bloc2 = 2 * (num_ope + 1);
-	
+
+	std::cout << "je suis " << operator_array[num_ope]->get_valeur() << std::endl;
+
 	if (num_ope > 0) {
 		if( operator_array[num_ope - 1]->get_ptr_bas1() != nullptr ){
 			num_bloc1 -= 1;
+			if ( second_iteration && num_bloc1 - 1 > 0 ){
+				while ( calcul_initial[num_bloc1]->get_valeur() == "*" || calcul_initial[num_bloc1]->get_valeur() == "/" ){
+					num_bloc1 -= 2;
+				}
+			}
+			std::cout << "je suis lie a gauche a " << calcul_initial[num_bloc1]->get_valeur() << std::endl;
 		}
 	}
 
 	if ( num_ope < operator_array.size() - 1 ){
 		if ( operator_array[num_ope + 1]->get_ptr_bas1() != nullptr ){
 			num_bloc2 += 1;
+			if ( second_iteration && num_bloc2 + 2 < calcul_initial.size() ){
+				
+				while ( calcul_initial[num_bloc2 + 2]->get_valeur() == "*" || calcul_initial[num_bloc2 + 2]->get_valeur() == "/" ){
+					num_bloc2 += 2;
+				}
+			}
+			std::cout << "je suis lie a droite a " << calcul_initial[num_bloc2]->get_valeur() << std::endl;
 		}	
 	}
 	operator_array[num_ope]->set_ptr_bas1( calcul_initial[num_bloc1] );
@@ -68,21 +83,26 @@ DynArray<Bloc*> parser(const DynArray<Bloc*>& calcul_initial){
 	
 	// for the first iteration we are just interest of * and / 
 	std::cout << "on passe aux * / " << "\n" << operator_array.size() << std::endl;
+	
+	bool second_iteration = false;
 
 	for( int num_ope = 0; num_ope < operator_array.size(); num_ope++ ){
 		
 		if ( operator_array[num_ope]->get_valeur() == "*" || operator_array[num_ope]->get_valeur() == "/" ){
+			
 			std::cout << "la valeur de l'opérateur est : " << std::endl;
 			std::cout << operator_array[num_ope]->get_valeur() << std::endl;
-			link_bloc( operator_array, calcul_initial, num_ope );
+			link_bloc( operator_array, calcul_initial, num_ope, second_iteration);
 		}
 	}
+	
+	second_iteration = true;
 	std::cout << "on passe aux + - " << std::endl;
 	for( int num_ope = 0; num_ope < operator_array.size(); num_ope++ ){
 
 		if( operator_array[num_ope]->get_valeur() == "+" || operator_array[num_ope]->get_valeur() == "-") {
 			
-			link_bloc( operator_array, calcul_initial, num_ope );
+			link_bloc( operator_array, calcul_initial, num_ope, second_iteration );
 			std::cout << "la valeur de l'opérateur est : " << std::endl;
 			std::cout << operator_array[num_ope]->get_valeur() << std::endl;
 		}
