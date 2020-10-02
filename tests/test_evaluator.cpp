@@ -7,14 +7,15 @@
 #include <calc_lib\DynArray.h>
 
 int main() {
+    std::string calcul = "0";
+	do{
+		std::cout << "entrez un calcul valable : " << std::endl;
+		;
+		std::cin >> calcul;
 
-	std::cout << "entrez un calcul valable : " << std::endl;
-	std::string calcul;
-	std::cin >> calcul;
-
-	DynArray<Bloc*> calcul_bloc = lexer(calcul);
-	DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
-	std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
-
+		DynArray<Bloc*> calcul_bloc = lexer(calcul);
+		DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
+		std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
+	}while(calcul != "0");
 	return 0;
 }

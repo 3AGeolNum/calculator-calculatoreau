@@ -5,7 +5,7 @@
 #include <calc_lib\DynArray.h>
 
 
-double evaluator(DynArray<Bloc*>& calc);
+std::string evaluator(DynArray<Bloc*>& calc);
 
 double add(double lhs, double rhs);
 double sub(double lhs, double rhs);
