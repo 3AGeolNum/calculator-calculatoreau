@@ -12,18 +12,18 @@ Checker::~Checker(){
 
 
 bool  Checker::is_input_empty(std::string str){
-        return str.empty() or str.find_first_not_of(" ") == std::string::npos or str.find_first_not_of("	") == std::string::npos;
+        return str.empty() || str.find_first_not_of(" ") == std::string::npos || str.find_first_not_of("	") == std::string::npos;
 }
 
 void Checker::check_pos(int pos){
 	if (pos == -1) {
                 	std::cout << " is a non valid element. Only numbers integer or float and  basic operators (*,+,-,/) are authorized."<< std::endl;
                 }
-        else if (pos > 10 and pos != 12){
+        else if (pos > 10 && pos != 12){
                 op_ += 1;
                 std::cout << "operator = " << op_ <<  std::endl;
 
-                if (op_ == 2 or min_ != 0){
+                if (op_ == 2 || min_ != 0){
                         std::cout << "Invalid argument. Two successive operator that are not minus is not valid" << std::endl;
 			checked_ = false;
                         }
@@ -38,7 +38,7 @@ void Checker::check_pos(int pos){
 		}
 			
 		}
-        else if(pos < 10 and pos >0){
+        else if(pos < 10 && pos >0){
 		
 		op_ = 0;
 		min_ = 0;
