@@ -59,6 +59,6 @@ DynArray<Bloc*> lexer(const std::string& input) {
 	std::cout << "valeur" << list_of_bloc[position_in_array]->get_valeur() << std::endl;
 	std::cout << "Fin lexer !" << std::endl;
 	std::cout << "Taille new " << cleaner_tab(list_of_bloc, position_in_array).size() << "taille ancien" << list_of_bloc.size() << std::endl;
-	return cleaner_tab(list_of_bloc, position_in_array);
+	return cleaner_tab(list_of_bloc, position_in_array +1);
 }
 
