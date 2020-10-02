@@ -12,7 +12,9 @@ int main(){
 	std::cin >> calcul ;
 	
 	DynArray<Bloc*> calcul_bloc = lexer( calcul );
-	DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
+	std::cout << "taille du tableau lexer : " << calcul_bloc.size() << std::endl;
+
+	DynArray<Bloc*> parsed_calcul = parser( calcul_bloc );
 	
 	std::cout << "look at the bloc chain " << parsed_calcul.size() << std::endl;
 	for (int ia = 0 ; ia < parsed_calcul.size(); ++ia){

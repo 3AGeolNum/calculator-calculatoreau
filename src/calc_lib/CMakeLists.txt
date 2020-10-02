@@ -6,12 +6,14 @@ PRIVATE
 "${PROJECT_SOURCE_DIR}/src/calc_lib/lexer.cpp"
 "${PROJECT_SOURCE_DIR}/src/calc_lib/bloc.cpp"
 "${PROJECT_SOURCE_DIR}/src/calc_lib/parser.cpp"
+"${PROJECT_SOURCE_DIR}/src/calc_lib/checker.cpp"
 "${PROJECT_SOURCE_DIR}/src/calc_lib/evaluator.cpp"
 PRIVATE
 "${PROJECT_SOURCE_DIR}/include/calc_lib/lexer.h"
 "${PROJECT_SOURCE_DIR}/include/calc_lib/bloc.h"
 "${PROJECT_SOURCE_DIR}/include/calc_lib/DynArray.h"
 "${PROJECT_SOURCE_DIR}/include/calc_lib/parser.h"
+"${PROJECT_SOURCE_DIR}/include/calc_lib/checker.h"
 "${PROJECT_SOURCE_DIR}/include/calc_lib/evaluator.h"
 )
 
