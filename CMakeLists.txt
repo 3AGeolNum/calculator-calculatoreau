@@ -29,4 +29,9 @@ configure_package_config_file(
 )
 
 
+<<<<<<< HEAD
 install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectCongfig.cmake DESTINATION ${PROJECT_BINARY_DIR}/install/cmake/ )
+=======
+install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectCongfig.cmake DESTINATION ${PROJECT_BINARY_DIR}/install/cmake/ )
+
+>>>>>>> 02ba64b3ec050b8ccb85ec0f31675986796b7b43
