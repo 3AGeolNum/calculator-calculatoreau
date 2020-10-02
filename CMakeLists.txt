@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(CalculetteProject VERSION 2.23)
 
-configure_file(cmake/CalculetteProjectConfig.h.in CalculetteProject.h)
+configure_file(cmake/CalculetteProjectConfig.h.in CalculetteProjectConfig.h)
 
 add_subdirectory(src/calc_lib)
 
@@ -21,12 +21,12 @@ if(CalculetteProject_WITH_TESTS)
 	add_subdirectory(tests)
 endif()
 
-#include(CMakePackageConfigHelpers)
-# configure_package_config_file(
-	# cmake/CalculetteProjectConfig.cmake.in 
-	# CalculetteProjectCongfig.cmake
-	# INSTALL_DESTINATION ${PROJECT_BINARY_DIR}
-# )
+include(CMakePackageConfigHelpers)
+configure_package_config_file(
+	cmake/CalculetteProjectConfig.cmake.in 
+	CalculetteProjectCongfig.cmake
+	INSTALL_DESTINATION ${PROJECT_BINARY_DIR}
+)
 
-# install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectCongfig.h DESTINATION ${PROJECT_BINARY_DIR}/install/include/ )
-# install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectCongfig.cmake DESTINATION ${PROJECT_BINARY_DIR}/install/cmake/ )
+
+install(FILES ${PROJECT_BINARY_DIR}/CalculetteProjectCongfig.cmake DESTINATION ${PROJECT_BINARY_DIR}/install/cmake/ )
