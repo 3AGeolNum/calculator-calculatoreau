@@ -16,4 +16,5 @@ int main(){
 
 			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;
 	}
+	std::cout << "ICICICI " << retour.size() <<  std::endl;
 }
