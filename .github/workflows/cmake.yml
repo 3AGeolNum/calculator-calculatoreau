@@ -4,8 +4,6 @@ on:
   push:
     branches: 
       - 'cmake'
-    branches-ignore:
-      - 'master'
   pull_request:
 
 env:
