@@ -18,7 +18,7 @@ int main() {
 	std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
 	//}while(calcul != "0");
 	
-	if(evaluator(parsed_calcul) != 410){
+	if(evaluator(parsed_calcul) != "410"){
 		return 1
 	}
 	return 0;
