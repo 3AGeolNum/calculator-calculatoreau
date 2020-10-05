@@ -1,8 +1,8 @@
 #ifndef PARSER_h
 #define PARSER_h
 
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
 
 DynArray<Bloc*> generate_operator_array( const DynArray<Bloc*>& calcul_initial );
 void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& calcul_initial,int num_ope, int num_bloc1, int num_bloc2 );

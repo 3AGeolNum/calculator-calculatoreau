@@ -8,8 +8,8 @@
  * \version 1
  */
 
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
 
 	/*!
 	 *  \brief Evaluator function
