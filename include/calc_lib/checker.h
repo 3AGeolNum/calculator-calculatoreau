@@ -1,3 +1,4 @@
+#ifndef CHECKER_h
 #define CHECKER_h
 
 #include <iostream>
@@ -88,7 +89,7 @@ public:
     */
 	bool complete_check();
 	
-	//!  Renvoie de checked_, principalement debug
+	//!  Returns checked_, mostly used to debug
 
     /*!
       \sa get_checked()
@@ -109,3 +110,5 @@ private:
 
 
 };
+
+#endif

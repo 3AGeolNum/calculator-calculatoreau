@@ -1,3 +1,6 @@
+#ifndef PARSER_h
+#define PARSER_h
+
 #include <calc_lib\bloc.h>
 #include <calc_lib\DynArray.h>
 
@@ -8,3 +11,5 @@ void initializing_links_for_plusminus( const DynArray<Bloc*>& operator_array, co
 void seeker_and_fill( std::string symb, const DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, int& count );
 void ordonate_array( const DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated );
 DynArray<Bloc*> parser( const DynArray<Bloc*>& calcul_initial );
+
+#endif
