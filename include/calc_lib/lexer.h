@@ -26,7 +26,7 @@
  * \author {PERRIER Yassine}
  * \date October 2nd 2020
  */
-void copy_local(DynArray<Bloc*>& new_tab, DynArray<Bloc*>& local_tab_copied);
+void copy_local(DynArray<Bloc*>& new_tab, const DynArray<Bloc*>& local_tab_copied);
 
 //! Remove all nullpointers in case there are nullptr.
 /**

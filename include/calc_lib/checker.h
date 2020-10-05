@@ -102,13 +102,13 @@ public:
 	//! remove potentially spaces in the input string given by the user.
 
     /*!
-      \sa remove_space(const std::string& initial_string)
+      \sa remove_space(std::string& initial_string)
       \param initial_string input string given by the user.
 	  \author {PERRIER Yassine}
 	  \version {1.0}
 	  \date October 5th 2020
     */
-	void remove_space(const std::string& initial_string);
+	void remove_space(std::string& initial_string);
 	
 	//! remove potentially comma in the input string given by the user.
 
