@@ -14,7 +14,7 @@ if(CalculetteProject_WITH_EXECUTABLES)
 endif()
 
 
-option(CalculetteProject_WITH_TESTS "Compile test projects" OFF)
+option(CalculetteProject_WITH_TESTS "Compile test projects" ON)
 if(CalculetteProject_WITH_TESTS)
 	enable_testing()
 	message(STATUS "Configuring CalculetteProjectwithtests")
