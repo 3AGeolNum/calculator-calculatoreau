@@ -18,8 +18,8 @@ int main() {
 	std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
 	//}while(calcul != "0");
 	
-	if(atof((evaluator(parsed_calcul)).c_str()) != 410){
-		return 1
+	if(atof((evaluator(parsed_calcul)).c_str()) != -410.0){
+		return 1;
 	}
 	return 0;
 }
