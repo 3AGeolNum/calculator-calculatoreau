@@ -1,5 +1,5 @@
 #include <iostream>
-#include <calc_lib\checker.h>
+#include <calc_lib/checker.h>
 #include <string>
 
 

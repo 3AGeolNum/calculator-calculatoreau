@@ -1,10 +1,10 @@
 #include <string>
 #include <iostream>
-#include <calc_lib\lexer.h>
-#include <calc_lib\parser.h>
-#include <calc_lib\evaluator.h>
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
+#include <calc_lib/lexer.h>
+#include <calc_lib/parser.h>
+#include <calc_lib/evaluator.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
 
 int main() {
     std::string calcul = "0";

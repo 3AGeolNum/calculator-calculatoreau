@@ -1,5 +1,5 @@
-#include <calc_lib\evaluator.h>
-#include <calc_lib\bloc.h>
+#include <calc_lib/evaluator.h>
+#include <calc_lib/bloc.h>
 #include <iostream>
 #include <string>
 

@@ -1,5 +1,5 @@
 
-#include <calc_lib\bloc.h>
+#include <calc_lib/bloc.h>
 
 
 Bloc::Bloc( bool nature, std::string item, Bloc* ptr_haut, Bloc* ptr_bas1, Bloc* ptr_bas2):
