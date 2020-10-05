@@ -5,16 +5,16 @@
 
 
 int main (){
-	std::string in;
+	std::string in = "-45-9+89*-4";
 	
-	while ( in != "quit"){
-		std::cout << "Enter your equation, to exit enter quit" << std::endl;
+	//while ( in != "quit"){
+		//std::cout << "Enter your equation, to exit enter quit" << std::endl;
 		//std::getline (std::cin , in);
-		in = "-45-9+89*-4";
-		Checker checke = Checker(in);
-		checke.complete_check();
-		std::cout << checke.get_checked() << std::endl;
-	}
-	return 0;
+		//in = "-45-9+89*-4";
+	Checker checke = Checker(in);
+	checke.complete_check();
+	std::cout << checke.get_checked() << std::endl;
+	//}
 
+	return 0;
 }

@@ -91,6 +91,8 @@ void Checker::check(){
 
 	}
 
+//todo
+//Remove space and transform comma to point.
 
 bool Checker::complete_check() {
 	is_end_operator(); //Check is the first and last character are operator first to avoid the loop
