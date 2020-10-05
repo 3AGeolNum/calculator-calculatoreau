@@ -1,0 +1,250 @@
+\doxysection{Bloc Class Reference}
+\label{class_bloc}\index{Bloc@{Bloc}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bloc} (bool nature=false, std\+::string item=\char`\"{}\char`\"{}, \textbf{ Bloc} $\ast$ptr\+\_\+haut=nullptr, \textbf{ Bloc} $\ast$ptr\+\_\+bas1=nullptr, \textbf{ Bloc} $\ast$ptr\+\_\+bas2=nullptr)
+\begin{DoxyCompactList}\small\item\em \doxyref{Bloc}{p.}{class_bloc}\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Bloc} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Bloc}{p.}{class_bloc}\textquotesingle{}s destructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+nature} (bool nature)
+\begin{DoxyCompactList}\small\item\em Set the nature of the bloc. \end{DoxyCompactList}\item 
+bool \textbf{ get\+\_\+nature} () const
+\begin{DoxyCompactList}\small\item\em Get the nature of the bloc. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+valeur} (std\+::string item)
+\begin{DoxyCompactList}\small\item\em Set the value of the bloc. \end{DoxyCompactList}\item 
+std\+::string \textbf{ get\+\_\+valeur} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the bloc. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+ptr\+\_\+haut} (\textbf{ Bloc} $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Set the pointers of the bloc. \end{DoxyCompactList}\item 
+\mbox{\label{class_bloc_a64d1982592a443e5320e4eb4c1a2b32c}} 
+void {\bfseries set\+\_\+ptr\+\_\+bas1} (\textbf{ Bloc} $\ast$ptr)
+\item 
+\mbox{\label{class_bloc_a327d491d8c23f48362bb8b59c560b3e5}} 
+void {\bfseries set\+\_\+ptr\+\_\+bas2} (\textbf{ Bloc} $\ast$ptr)
+\item 
+\textbf{ Bloc} $\ast$ \textbf{ get\+\_\+ptr\+\_\+haut} ()
+\begin{DoxyCompactList}\small\item\em Get the pointers of the bloc. \end{DoxyCompactList}\item 
+\mbox{\label{class_bloc_ac0ec990353de0bd0e7f127a564341c16}} 
+\textbf{ Bloc} $\ast$ {\bfseries get\+\_\+ptr\+\_\+bas1} ()
+\item 
+\mbox{\label{class_bloc_a42e7ee057e58c202030081010aac34ad}} 
+\textbf{ Bloc} $\ast$ {\bfseries get\+\_\+ptr\+\_\+bas2} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_bloc_a0590717d46aac019bcd77370406eb841}} 
+\index{Bloc@{Bloc}!Bloc@{Bloc}}
+\index{Bloc@{Bloc}!Bloc@{Bloc}}
+\doxysubsubsection{Bloc()}
+{\footnotesize\ttfamily Bloc\+::\+Bloc (\begin{DoxyParamCaption}\item[{bool}]{nature = {\ttfamily false},  }\item[{std\+::string}]{item = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\textbf{ Bloc} $\ast$}]{ptr\+\_\+haut = {\ttfamily nullptr},  }\item[{\textbf{ Bloc} $\ast$}]{ptr\+\_\+bas1 = {\ttfamily nullptr},  }\item[{\textbf{ Bloc} $\ast$}]{ptr\+\_\+bas2 = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Bloc}{p.}{class_bloc}\textquotesingle{}s constructor. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Bloc}{p.}{class_bloc}(bool nature=false, std\+::string item=\char`\"{}\char`\"{}, Bloc$\ast$ ptr\+\_\+haut = nullptr , Bloc$\ast$ ptr\+\_\+bas1 = nullptr, Bloc$\ast$ ptr\+\_\+bas2 = nullptr) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em nature} & false if it is a number and true if it is an operator. item string corresponding to the value of the bloc (number or operator) ptr\+\_\+haut pointer to the bloc needing the result of this operation in case the current bloc is an operator. ptr\+\_\+bas1 pointer to the first bloc needed to apply the operation in case the current bloc is an operator. ptr\+\_\+bas2 pointer to the second bloc needed to apply the operation in case the current bloc is an operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_a1f40a68b1acb741fc91e07bbaa61dc22}} 
+\index{Bloc@{Bloc}!````~Bloc@{$\sim$Bloc}}
+\index{````~Bloc@{$\sim$Bloc}!Bloc@{Bloc}}
+\doxysubsubsection{$\sim$Bloc()}
+{\footnotesize\ttfamily Bloc\+::$\sim$\+Bloc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Bloc}{p.}{class_bloc}\textquotesingle{}s destructor. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{$\sim$\+Bloc()}{p.}{class_bloc_a1f40a68b1acb741fc91e07bbaa61dc22} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_bloc_ae0fba3134d309e65cda630067a4acfef}} 
+\index{Bloc@{Bloc}!get\_nature@{get\_nature}}
+\index{get\_nature@{get\_nature}!Bloc@{Bloc}}
+\doxysubsubsection{get\_nature()}
+{\footnotesize\ttfamily bool Bloc\+::get\+\_\+nature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the nature of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{get\+\_\+nature()}{p.}{class_bloc_ae0fba3134d309e65cda630067a4acfef} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+nature\+\_\+ of the bloc ; true if it is an operator and false if not. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_a858e38041de345f91b964648a2231599}} 
+\index{Bloc@{Bloc}!get\_ptr\_haut@{get\_ptr\_haut}}
+\index{get\_ptr\_haut@{get\_ptr\_haut}!Bloc@{Bloc}}
+\doxysubsubsection{get\_ptr\_haut()}
+{\footnotesize\ttfamily \textbf{ Bloc} $\ast$ Bloc\+::get\+\_\+ptr\+\_\+haut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the pointers of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+get\+\_\+ptr\+\_\+haut(\+Bloc$\ast$ ptr) get\+\_\+ptr\+\_\+bas1(\+Bloc$\ast$ ptr) get\+\_\+ptr\+\_\+bas2(\+Bloc$\ast$ ptr) 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+ptr pointeur linked to the bloc. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_a6e3ade0691b3c8aea209b922a15aacb1}} 
+\index{Bloc@{Bloc}!get\_valeur@{get\_valeur}}
+\index{get\_valeur@{get\_valeur}!Bloc@{Bloc}}
+\doxysubsubsection{get\_valeur()}
+{\footnotesize\ttfamily std\+::string Bloc\+::get\+\_\+valeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the value of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+\_\+valeur(std\+::string item)}{p.}{class_bloc_a29ba12cf56247ed8948cb3f1738492a0} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+item\+\_\+ which is the value. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_afa40c318865a17db414b8022dd711770}} 
+\index{Bloc@{Bloc}!set\_nature@{set\_nature}}
+\index{set\_nature@{set\_nature}!Bloc@{Bloc}}
+\doxysubsubsection{set\_nature()}
+{\footnotesize\ttfamily void Bloc\+::set\+\_\+nature (\begin{DoxyParamCaption}\item[{bool}]{nature }\end{DoxyParamCaption})}
+
+
+
+Set the nature of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+\_\+nature(bool nature)}{p.}{class_bloc_afa40c318865a17db414b8022dd711770} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em nature} & true if it is an operator and false if not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_abc02ca3fa3f706c635f5de4a46d287c9}} 
+\index{Bloc@{Bloc}!set\_ptr\_haut@{set\_ptr\_haut}}
+\index{set\_ptr\_haut@{set\_ptr\_haut}!Bloc@{Bloc}}
+\doxysubsubsection{set\_ptr\_haut()}
+{\footnotesize\ttfamily void Bloc\+::set\+\_\+ptr\+\_\+haut (\begin{DoxyParamCaption}\item[{\textbf{ Bloc} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Set the pointers of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+\_\+ptr\+\_\+haut(\+Bloc$\ast$ ptr)}{p.}{class_bloc_abc02ca3fa3f706c635f5de4a46d287c9} set\+\_\+ptr\+\_\+bas1(\+Bloc$\ast$ ptr) set\+\_\+ptr\+\_\+bas2(\+Bloc$\ast$ ptr) 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointeur to the bloc to be linked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+\mbox{\label{class_bloc_a29ba12cf56247ed8948cb3f1738492a0}} 
+\index{Bloc@{Bloc}!set\_valeur@{set\_valeur}}
+\index{set\_valeur@{set\_valeur}!Bloc@{Bloc}}
+\doxysubsubsection{set\_valeur()}
+{\footnotesize\ttfamily void Bloc\+::set\+\_\+valeur (\begin{DoxyParamCaption}\item[{std\+::string}]{item }\end{DoxyParamCaption})}
+
+
+
+Set the value of the bloc. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{set\+\_\+valeur(std\+::string item)}{p.}{class_bloc_a29ba12cf56247ed8948cb3f1738492a0} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em item} & string giving the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+\{C\+A\+P\+I\+L\+L\+ON Quentin \& P\+E\+R\+R\+I\+ER Yassine\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\{1.\+0\} 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2nd 2020 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+O\+:/\+Documents/\+E\+N\+S\+G\+\_\+3\+A/\+Projet\+\_\+calculette/\+Clonage/include/calc\+\_\+lib/\textbf{ bloc.\+h}\item 
+O\+:/\+Documents/\+E\+N\+S\+G\+\_\+3\+A/\+Projet\+\_\+calculette/\+Clonage/src/calc\+\_\+lib/bloc.\+cpp\end{DoxyCompactItemize}

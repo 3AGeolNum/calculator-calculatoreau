@@ -3,7 +3,7 @@
  * \brief Lexer of the calculator
  * \author PERRIER Yassine
  * \version 1.0
- * \date 28 septembre 2020
+ * \date 28 september 2020
  *
  * definitions of the functions needed to cut the input string into unitary blocs.
  *
