@@ -7,7 +7,7 @@ configure_file(cmake/CalculetteProjectConfig.h.in CalculetteProjectConfig.h)
 add_subdirectory(src/calc_lib)
 
 #about executable
-option(CalculetteProject_WITH_EXECUTABLES "Compile mains" OFF)
+option(CalculetteProject_WITH_EXECUTABLES "Compile mains" ON)
 if(CalculetteProject_WITH_EXECUTABLES)
 	message(STATUS "Configuring CalculetteProject with executables")
 	add_subdirectory(mains)
