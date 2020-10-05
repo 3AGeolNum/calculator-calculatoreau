@@ -8,8 +8,8 @@
 int main(){
 	
 	std::cout << "entrez un calcul valable : " << std::endl;
-	std::string calcul;
-	std::cin >> calcul ;
+	std::string calcul = "-45-9+89*-4";
+	//std::cin >> calcul ;
 	
 	DynArray<Bloc*> calcul_bloc = lexer( calcul );
 	std::cout << "taille du tableau lexer : " << calcul_bloc.size() << std::endl;

@@ -10,8 +10,8 @@ int main() {
     std::string calcul = "0";
 	do{
 		std::cout << "entrez un calcul valable : " << std::endl;
-		;
-		std::cin >> calcul;
+		calcul = "-45-9+89*-4";
+		//std::cin >> calcul;
 
 		DynArray<Bloc*> calcul_bloc = lexer(calcul);
 		DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
