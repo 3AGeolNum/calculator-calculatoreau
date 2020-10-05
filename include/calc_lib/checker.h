@@ -5,7 +5,7 @@
 /**
  * \file checker.h
  * \brief Header of the checker class
- * \author Priscillia.L
+ * \author Priscillia.L & PERRIER Yassine
  * \version 0.0.1
  * \date October 2nd 2020
  *
@@ -99,13 +99,34 @@ public:
     */
 	bool get_checked();
 	
+	//! remove potentially spaces in the input string given by the user.
+
+    /*!
+      \sa remove_space(const std::string& initial_string)
+      \param initial_string input string given by the user.
+	  \author {PERRIER Yassine}
+	  \version {1.0}
+	  \date October 5th 2020
+    */
+	void remove_space(const std::string& initial_string);
+	
+	//! remove potentially comma in the input string given by the user.
+
+    /*!
+      \sa change_comma_into_point(std::string& initial_string )
+      \param initial_string input string given by the user.
+	  \author {PERRIER Yassine}
+	  \version {1.0}
+	  \date October 5th 2020
+    */
+	void change_comma_into_point(std::string& initial_string );
 	
 
 private:
 	int op_ = 0; // class variable used by check()
 	int min_ = 0; // class variable used by check ()
 	bool checked_ = true; //Boolean showing
-	std::string auth_ = "1234567890		+-*/?,"; // String of allowed characters
+	std::string auth_ = "1234567890		+-*/,."; // String of allowed characters
 	std::string input_; //String that needs to be checked
 
 
