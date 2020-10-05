@@ -23,40 +23,31 @@ void Checker::check_pos(int pos){
 	if (pos == -1) {
 		// This is the case where the element is not part of the authorised elements
                 	std::cout << " Non valid element. Only numbers integer or float and  basic operators (*,+,-,/) are authorized."<< std::endl;
-					checked_ = false;
-                }
-        else if (pos > 11 && pos != 13){
+					checked_ = false;}
+    else if (pos > 11 && pos != 13){
 				// This behaviour is for every operator minus minus that have a specific behaviour due to negative number
-                op_ += 1;
-                std::cout << "operator = " << op_ <<  std::endl;
+		op_ += 1;
+		std::cout << "operator = " << op_ <<  std::endl;
 
-                if (op_ == 2 || min_ != 0){
-					// Here it is testing there is only one operator between two numbers
-                        std::cout << "Invalid argument. Two successive operator that are not minus is not valid" << std::endl;
-						checked_ = false;
-                        }
-                }
+		if (op_ == 2 || min_ != 0){
+			// Here it is testing there is only one operator between two numbers
+				std::cout << "Invalid argument. Two successive operator that are not minus is not valid" << std::endl;
+				checked_ = false;
+		}
+	}
 	else if (pos == 13){
 		// Here is the behaviour abour minus
 		min_ += 1;
-
 		if (min_ >= 3){ // Two minus can be used for exemple 8--2 which would be 8+2 so only three minus is a bad situation 
-			
-		std::cout << "Invalid argument. More too many minux operator" << std::endl;
-		checked_ = false ;
-		}
-			
-		}
-        else if(pos < 11 && pos >0){
+			std::cout << "Invalid argument. More too many minux operator" << std::endl;
+			checked_ = false ;}	
+	}
+    else if(pos < 11 && pos >0){
 		// Here is the behaviour for numbers that reset the counter for the operators
 		op_ = 0;
 		min_ = 0;
-
-                //Reinitialisation of operator and minus
-              
-                }
-
-
+        //Reinitialisation of operator and minus
+	}
 }
 
 

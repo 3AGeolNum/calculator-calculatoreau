@@ -7,9 +7,18 @@
 #include <calc_lib\bloc.h>
 #include <calc_lib\DynArray.h>
 #include <calc_lib\checker.h>
+/**
+ * \file main.cpp
+ * \brief Entry of the calculator project
+ * \author PERRIER Yassine
+ * \version 1.0
+ * \date 28 september 2020
+ *
+ */
+
 
 /**
- * \fn int main (void)
+ * \fn int main()
  * \brief Entry of the program
  *
  * \return EXIT_SUCCESS - Normal stop of the program.
