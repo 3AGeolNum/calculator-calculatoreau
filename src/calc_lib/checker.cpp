@@ -82,7 +82,7 @@ void Checker::check(){
 
 void Checker::remove_space(const std::string& initial_string){
 	std::string string_without_spaces;
-	for(int pos = 0; pos < initial_string.length; ++pos){
+	for(int pos = 0; pos < initial_string.length(); ++pos){
 		if( initial_string[pos] != " " ){
 			string_without_spaces.push_back( initial_string[pos] );
 		}
@@ -91,7 +91,7 @@ void Checker::remove_space(const std::string& initial_string){
 
 void Checker::change_comma_into_point(std::string& initial_string )
 {
-	for (int pos = 0; pos < initial_string.length ; ++pos){
+	for (int pos = 0; pos < initial_string.length() ; ++pos){
 		if (initial_string[pos]== ','){
 			initial_string[pos]='.';
 		}
