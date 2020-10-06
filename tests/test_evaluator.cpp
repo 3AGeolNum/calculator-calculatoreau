@@ -11,8 +11,7 @@ int main() {
 	//do{
 	//std::cout << "entrez un calcul valable : " << std::endl;
 	//std::cin >> calcul;
-	
-	std::string calcul = "-45-9+89*-4";
+	std::string calcul = "-45-9+89*-4.-.0";
 	DynArray<Bloc*> calcul_bloc = lexer(calcul);
 	DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
 	//std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;

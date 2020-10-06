@@ -4,10 +4,10 @@
 #include <iostream>
 #include <string>
 
-std::string evaluator(const DynArray< Bloc* >& calcul_init )
+std::string evaluator(const DynArray< Bloc* >& parsed_calcul )
 {
-    DynArray< Bloc* > parsed_calcul( calcul_init.size() );
-    copy_local( parsed_calcul, calcul_init );
+    //DynArray< Bloc* > parsed_calcul( calcul_init.size() );
+    //copy_local( parsed_calcul, calcul_init );
 	std::string res;
 	for (int ia = 0; ia < parsed_calcul.size(); ++ia) {
 		
@@ -56,6 +56,6 @@ double mul(double lhs, double rhs) {
 	return lhs * rhs;
 }
 
-double div(double lhs, double  rhs) {
+double div(double lhs, double rhs) {
 	return lhs / rhs;
 }
