@@ -19,7 +19,7 @@
 	 *  \param calc : parsed calculation
 	 *  \return character string containing the result of the calculation
 	 */
-std::string evaluator(const DynArray<Bloc*>& calc);
+std::string evaluator(const DynArray<Bloc*>& parsed_calcul);
 
 	/*!
 	 *  \brief Addition function

@@ -121,13 +121,27 @@ public:
     */
 	void change_comma_into_point(std::string& initial_string );
 	
+	//! getter of the member input_
 
+    /*!
+      \sa std::string get_input_modified()
+      \return input_ std::string
+	  \author {PERRIER Yassine}
+	  \version {1.0}
+	  \date October 6th 2020
+    */
+    std::string get_input_modified()
+    {
+        return input_; 
+    }
+	
 private:
 	int op_ = 0; // class variable used by check()
 	int min_ = 0; // class variable used by check ()
 	bool checked_ = true; //Boolean showing
-	std::string auth_ = "1234567890		+-*/,."; // String of allowed characters
+	std::string auth_ = "1234567890		+-*/."; // String of allowed characters
 	std::string input_; //String that needs to be checked
+    bool point_ = false;
 
 
 };

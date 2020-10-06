@@ -28,7 +28,6 @@ int main(){
 	
 	// 1/-- Call to the checker
 	std::string in; //string input.
-	Checker checke = Checker(in);
 	while (in != "quit") {
 		std::cout << "Enter your equation, to exit enter quit" << std::endl;
 		std::getline(std::cin, in);
@@ -42,8 +41,6 @@ int main(){
 
 			// 4/-- Call to the evaluator
 			std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
-
-			std::cout << "nous sommes dans le main " << std::endl;
 		}
 	}
 	return EXIT_SUCCESS;
