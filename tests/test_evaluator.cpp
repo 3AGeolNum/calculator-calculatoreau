@@ -14,6 +14,7 @@ int main() {
 	
 	std::string calcul = "-45-9+89*-4";
 	DynArray<Bloc*> calcul_bloc = lexer(calcul);
+	std::cout << "lexer fini! " << std::endl;
 	DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
 	//std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
 	//}while(calcul != "0");
