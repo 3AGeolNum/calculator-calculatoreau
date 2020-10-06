@@ -65,6 +65,7 @@ void Checker::check_pos( int pos )
     else if( pos == 13 )
     {
         // Here is the behaviour abour minus
+        point_ = false;
         min_ += 1;
         if( min_ >= 3 )
         { // Two minus can be used for exemple 8--2 which would be 8+2 so only
@@ -164,6 +165,7 @@ bool Checker::complete_check()
 {
     remove_space( input_ );
     change_comma_into_point( input_ );
+
     is_end_operator(); // Check is the first and last character are operator
                        // first to avoid the loop
     check();

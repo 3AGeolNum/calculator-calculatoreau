@@ -57,5 +57,6 @@ double mul(double lhs, double rhs) {
 }
 
 double div(double lhs, double rhs) {
+    //assert( rhs == 0.0 || lhs == 0.0 || )
 	return lhs / rhs;
 }
