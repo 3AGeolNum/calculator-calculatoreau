@@ -43,11 +43,9 @@ void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& ca
 	if ( num_ope < operator_array.size() - 1 ){
 		if ( operator_array[num_ope + 1]->get_ptr_bas1() != nullptr ){
 			num_bloc2 += 1;
-			if ( second_iteration && num_bloc2 + 2 < calcul_initial.size() ){
-				
-				while ( calcul_initial[num_bloc2 + 2]->get_valeur() == "*" || calcul_initial[num_bloc2 + 2]->get_valeur() == "/" ){
-					num_bloc2 += 2;
-				}
+
+			while ( second_iteration && num_bloc2 + 2 < calcul_initial.size() && (calcul_initial[num_bloc2 + 2]->get_valeur() == "*" || calcul_initial[num_bloc2 + 2]->get_valeur() == "/" )){
+				num_bloc2 += 2;
 			}
 			std::cout << "je suis lie a droite a " << calcul_initial[num_bloc2]->get_valeur() << std::endl;
 		}	
