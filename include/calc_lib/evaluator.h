@@ -8,8 +8,8 @@
  * \version 1
  */
 
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
 
 	/*!
 	 *  \brief Evaluator function
@@ -19,7 +19,7 @@
 	 *  \param calc : parsed calculation
 	 *  \return character string containing the result of the calculation
 	 */
-std::string evaluator(DynArray<Bloc*>& calc);
+std::string evaluator(const DynArray<Bloc*>& calc);
 
 	/*!
 	 *  \brief Addition function

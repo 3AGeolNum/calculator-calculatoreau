@@ -1,7 +1,7 @@
 #include <iostream>
 #ifndef calcul_parsing
 #define calcul_parsing
-#include <calc_lib\lexer.h>
+#include <calc_lib/lexer.h>
 
 DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 

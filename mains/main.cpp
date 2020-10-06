@@ -1,12 +1,12 @@
 #include <CalculetteProjectConfig.h>
 #include <string>
 #include <iostream>
-#include <calc_lib\lexer.h>
-#include <calc_lib\parser.h>
-#include <calc_lib\evaluator.h>
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
-#include <calc_lib\checker.h>
+#include <calc_lib/lexer.h>
+#include <calc_lib/parser.h>
+#include <calc_lib/evaluator.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
+#include <calc_lib/checker.h>
 /**
  * \file main.cpp
  * \brief Entry of the calculator project

@@ -6,9 +6,9 @@
 #include <calc_lib/DynArray.h>
 
 int main(){
-	//création d'une chaine de calcul.
+	//Creation of a string defining a calculation.
 	std::string chaine_test = "-45-9+89*-4";
-	//Création d'un DynArray de bloc contenant les parties élémentaires de la chaine.
+	//Creation of a dynarray containing bloc of elementary parts of the previous string.
 	DynArray<Bloc*> retour (lexer(chaine_test));
 	//Affichage du DynArray.
 	for (int ia = 0 ; ia < retour.size(); ++ia){

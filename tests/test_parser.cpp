@@ -1,15 +1,15 @@
 #include <string>
 #include <iostream>
-#include <calc_lib\lexer.h>
-#include <calc_lib\parser.h>
-#include <calc_lib\bloc.h>
-#include <calc_lib\DynArray.h>
+#include <calc_lib/lexer.h>
+#include <calc_lib/parser.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/DynArray.h>
 
 int main(){
 	
 	std::cout << "entrez un calcul valable : " << std::endl;
-	std::string calcul;
-	std::cin >> calcul ;
+	std::string calcul = "-45-9+89*-4";
+	//std::cin >> calcul ;
 	
 	DynArray<Bloc*> calcul_bloc = lexer( calcul );
 	std::cout << "taille du tableau lexer : " << calcul_bloc.size() << std::endl;

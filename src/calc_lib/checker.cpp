@@ -1,23 +1,16 @@
 #include <calc_lib/checker.h>
 
-
-
-
-
 Checker::Checker(std::string str): input_(str){
 	
 }
-
 
 Checker::~Checker(){
 
 }
 
-
 bool  Checker::is_input_empty(std::string str){
         return str.empty() || str.find_first_not_of(" ") == std::string::npos || str.find_first_not_of("	") == std::string::npos;
 }
-
 
 void Checker::check_pos(int pos){
 	if (pos == -1) {
@@ -50,7 +43,6 @@ void Checker::check_pos(int pos){
 	}
 }
 
-
 void Checker::is_end_operator() {
 	// We start by checking if the string is empty this is due to the way the structure is done. It is up for improvement
 	if (!is_input_empty(input_)) {
@@ -71,7 +63,6 @@ void Checker::is_end_operator() {
 	
 }
 
-
 void Checker::check(){
 	if (is_input_empty(input_)){ // If the input is empty, no calcul can be done
                 std::cout << "Please, write something." << std::endl;
@@ -87,18 +78,37 @@ void Checker::check(){
                 int pos = auth_.find(input_[a]); // Retrieving the character if it is valid or npos if not
                 check_pos(pos); // Process the position or the npos
         }
-
-
 	}
+
+void Checker::remove_space(std::string& initial_string){
+	std::string string_without_spaces;
+	for(int pos = 0; pos < initial_string.length(); ++pos){
+		if( initial_string[pos] != ' ' ){
+			string_without_spaces.push_back( initial_string[pos] );
+		}
+	}
+	
+	initial_string = string_without_spaces;
+}
+
+void Checker::change_comma_into_point(std::string& initial_string )
+{
+	for (int pos = 0; pos < initial_string.length() ; ++pos){
+		if (initial_string[pos]== ','){
+			initial_string[pos]='.';
+		}
+	}
+}
 
 
 bool Checker::complete_check() {
+	remove_space(input_);
+	change_comma_into_point(input_);
 	is_end_operator(); //Check is the first and last character are operator first to avoid the loop
 	check(); 
 	return checked_;
 
 }
-
 
 bool Checker::get_checked(){
 	

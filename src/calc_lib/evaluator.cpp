@@ -1,10 +1,13 @@
-#include <calc_lib\evaluator.h>
-#include <calc_lib\bloc.h>
+#include <calc_lib/evaluator.h>
+#include <calc_lib/bloc.h>
+#include <calc_lib/lexer.h>
 #include <iostream>
 #include <string>
 
-std::string evaluator(DynArray<Bloc*>& parsed_calcul)
+std::string evaluator(const DynArray< Bloc* >& calcul_init )
 {
+    DynArray< Bloc* > parsed_calcul( calcul_init.size() );
+    copy_local( parsed_calcul, calcul_init );
 	std::string res;
 	for (int ia = 0; ia < parsed_calcul.size(); ++ia) {
 		
