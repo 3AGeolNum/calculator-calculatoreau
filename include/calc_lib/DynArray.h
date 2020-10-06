@@ -26,7 +26,6 @@ private:
 	int size_;
 };
 template <class T> DynArray<T>::DynArray(int size) : size_(size), elts_(new T[size]), capacity_(size) {
-	std::cout << "tableau dynamique de taille " << size_ << std::endl;
 	assert(size >= 0);
 }
 
@@ -47,7 +46,6 @@ template <class T> DynArray<T>::DynArray(const DynArray<T>& other) : size_(other
 	for (int ia = 0; ia < size_; ia++) {
 		elts_[ia] = other.elts_[ia];
 	}
-	std::cout << "coucou je suis un tableau dynamique copié de taille " << size_ << std::endl;
 }
 
 template <class T> DynArray<T>& DynArray<T>::operator=(const DynArray<T>& other) {
@@ -60,7 +58,6 @@ template <class T> DynArray<T>& DynArray<T>::operator=(const DynArray<T>& other)
 	for (int ia = 0; ia < size_; ia++) {
 		elts_[ia] = other.elts_[ia];
 	}
-	std::cout << "coucou je suis un tableau dynamique copié par opérateur = et de taille " << size_ << std::endl;
 }
 
 template <class T> void DynArray<T>::grow()
