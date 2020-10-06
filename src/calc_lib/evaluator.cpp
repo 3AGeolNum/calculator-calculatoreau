@@ -20,7 +20,6 @@ std::string evaluator(const DynArray< Bloc* >& parsed_calcul )
 
 		/* loop to do all the operations in the order in which the blocks are received by the parser
 		*/
-
 		if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "+")
 		{
 			res = std::to_string(add(lhs, rhs));
@@ -57,6 +56,10 @@ double mul(double lhs, double rhs) {
 }
 
 double div(double lhs, double rhs) {
-    //assert( rhs == 0.0 || lhs == 0.0 || )
-	return lhs / rhs;
+	assert( rhs != 0.0 ); // In debug mode.
+	if( rhs != 0.0 ){ //in release mode.
+		return lhs / rhs;
+	}
+	std::cout << "Division by 0 noticed" << std::endl;
+	exit( 3 );
 }

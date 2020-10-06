@@ -26,7 +26,7 @@ void Checker::check_pos( int pos )
         // This behaviour is for every operator minus minus that have a specific
         // behaviour due to negative number
         op_ += 1;
-        std::cout << "operator = " << op_ << std::endl;
+        std::cout << "operator = " << op_ << " " << auth_[pos] << std::endl;
 
 		
         if( op_ == 2 || min_ != 0 )
@@ -45,7 +45,7 @@ void Checker::check_pos( int pos )
         // This behaviour is for every operator point that have a specific
         // behaviour due to negative number
         op_ += 1;
-        std::cout << "operator is point " << op_ << std::endl;
+        std::cout << "operator is point " << op_ <<  std::endl;
 		
 		if (point_) {
             checked_ = false;
@@ -76,7 +76,7 @@ void Checker::check_pos( int pos )
         }
     }
    
-        else if( pos < 11 && pos > 0 )
+        else if( pos < 11 && pos >= 0 )
         {
             // Here is the behaviour for numbers that reset the counter for the
             // operators

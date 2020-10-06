@@ -4,7 +4,6 @@
 
 Bloc::Bloc( bool nature, std::string item, Bloc* ptr_haut, Bloc* ptr_bas1, Bloc* ptr_bas2):
 	nature_(nature), item_(item), ptr_bas1_(ptr_bas1), ptr_bas2_(ptr_bas2), ptr_haut_(ptr_haut) {
-		std::cout << "coucou je suis un bloc de nature " << nature << "et qui contient " << item_ << std::endl;	
 		// les nombre n'ont pas de ptr_bas
 	}
 	
