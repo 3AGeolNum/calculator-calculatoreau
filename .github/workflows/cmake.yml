@@ -16,7 +16,7 @@ jobs:
     name: Automatic formatting
     steps:
       - name: Checkout
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
         if: github.event_name != 'pull_request'
       - name: applying_reformat
         uses: SKIRT/auto-format@master
