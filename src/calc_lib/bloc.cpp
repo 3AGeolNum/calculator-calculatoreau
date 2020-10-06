@@ -13,16 +13,13 @@ Bloc::~Bloc(){
 
 void Bloc::set_nature(bool nature){
 	//0 for nomber and 1 for operator
-	
 	nature_ = nature;
-	std::cout << " hhe tu viens de changer ma nature vers " << nature << std::endl;
 }
 
 //bool Bloc::get_nature() const { return nature_; }
 
 void Bloc::set_valeur(std::string item){
 	item_ = item;
-	std::cout << " hhe tu viens de changer mon contenu vers " << item << std::endl;
 }
 
 //std::string Bloc::get_valeur() { return item_; }
