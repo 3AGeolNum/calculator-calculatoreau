@@ -1,3 +1,14 @@
+/**
+ * \file parser.h
+ * \brief Parser of the calculator
+ * \author CAPILLON Quentin
+ * \version 1.0
+ * \date 06 octobre 2020
+ *
+ * definitions of the functions needed to define the order of the calculations that the operator will do.
+ *
+ */
+ 
 #include <iostream>
 #ifndef calcul_parsing
 #define calcul_parsing
@@ -11,23 +22,23 @@ DynArray<Bloc*> generate_operator_array(const DynArray<Bloc*>& calcul_initial){
 		
 		if( calcul_initial[num_bloc]->get_nature() ){
 			operator_array[position_operator_array] = calcul_initial[num_bloc];
-			
-			std::cout << operator_array[position_operator_array]->get_valeur() << std::endl;
 			position_operator_array += 1;
 		}
 	}
-
 	return operator_array;
-	
 } 
 
 void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& calcul_initial,int num_ope, bool second_iteration){
-
+	
+	/*numbers of the blocks to be linked in the calcul_initial
+	initialized for the numbers on either side of the current operator
+	*/
 	int num_bloc1 = num_ope * 2;
 	int num_bloc2 = 2 * (num_ope + 1);
 
-	std::cout << "je suis " << operator_array[num_ope]->get_valeur() << std::endl;
-
+	//test if we have to change blocs to linked
+	
+	//in first position we don't have to change
 	if (num_ope > 0) {
 		if( operator_array[num_ope - 1]->get_ptr_bas1() != nullptr ){
 			num_bloc1 -= 1;
