@@ -45,7 +45,6 @@ void Checker::check_pos( int pos )
         // This behaviour is for every operator point that have a specific
         // behaviour due to negative number
         op_ += 1;
-        std::cout << "operator is point " << op_ <<  std::endl;
 		
 		if (point_) {
             checked_ = false;
