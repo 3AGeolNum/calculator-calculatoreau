@@ -26,7 +26,7 @@ void Checker::check_pos( int pos )
         // This behaviour is for every operator minus minus that have a specific
         // behaviour due to negative number
         op_ += 1;
-        std::cout << "operator = " << op_ << " " << auth_[pos] << std::endl;
+      //  std::cout << "operator = " << op_ << " " << auth_[pos] << std::endl;
 
 		
         if( op_ == 2 || min_ != 0 )

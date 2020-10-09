@@ -2,8 +2,8 @@
 #include <calc_lib/bloc.h>
 
 
-Bloc::Bloc( bool nature, std::string item, Bloc* ptr_haut, Bloc* ptr_bas1, Bloc* ptr_bas2):
-	nature_(nature), item_(item), ptr_bas1_(ptr_bas1), ptr_bas2_(ptr_bas2), ptr_haut_(ptr_haut) {
+Bloc::Bloc( bool nature, std::string item, Bloc* ptr_below1, Bloc* ptr_below2):
+	nature_(nature), item_(item), ptr_below1_(ptr_below1), ptr_below2_(ptr_below2) {
 		// les nombre n'ont pas de ptr_bas
 	}
 	
@@ -17,26 +17,20 @@ void Bloc::set_nature(bool nature){
 
 //bool Bloc::get_nature() const { return nature_; }
 
-void Bloc::set_valeur(std::string item){
+void Bloc::set_value(std::string item){
 	item_ = item;
 }
 
 //std::string Bloc::get_valeur() { return item_; }
 
-void Bloc::set_ptr_haut(Bloc* ptr){
-	ptr_haut_ = ptr;
+void Bloc::set_ptr_below1(Bloc* ptr){
+	ptr_below1_ = ptr;
 }
 
-void Bloc::set_ptr_bas1(Bloc* ptr){
-	ptr_bas1_ = ptr;
+void Bloc::set_ptr_below2(Bloc* ptr){
+	ptr_below2_ = ptr;
 }
 
-void Bloc::set_ptr_bas2(Bloc* ptr){
-	ptr_bas2_ = ptr;
-}
+Bloc* Bloc::get_ptr_below1() { return ptr_below1_; }
 
-Bloc* Bloc::get_ptr_haut() { return ptr_haut_; }
-
-Bloc* Bloc::get_ptr_bas1() { return ptr_bas1_; }
-
-Bloc* Bloc::get_ptr_bas2() { return ptr_bas2_; }
+Bloc* Bloc::get_ptr_below2() { return ptr_below2_; }

@@ -40,9 +40,9 @@ void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& ca
 	
 	//in first position we don't have to change
 	if (num_ope > 0) {
-		if( operator_array[num_ope - 1]->get_ptr_bas1() != nullptr ){
+		if( operator_array[num_ope - 1]->get_ptr_below1() != nullptr ){
 			num_bloc1 -= 1;
-            while( second_iteration && !first_second_iteration && num_bloc1 - 1 > 0 && (calcul_initial[num_bloc1]->get_valeur() == "*" || calcul_initial[num_bloc1]->get_valeur() == "/") )
+            while( second_iteration && !first_second_iteration && num_bloc1 - 1 > 0 && (calcul_initial[num_bloc1]->get_value() == "*" || calcul_initial[num_bloc1]->get_value() == "/") )
             {
 				num_bloc1 -= 2;
 			}
@@ -50,21 +50,21 @@ void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& ca
 	}
 
 	if ( num_ope < operator_array.size() - 1 ){
-		if ( operator_array[num_ope + 1]->get_ptr_bas1() != nullptr ){
+		if ( operator_array[num_ope + 1]->get_ptr_below1() != nullptr ){
 			num_bloc2 += 1;
 
-			while ( second_iteration && num_bloc2 + 2 < calcul_initial.size() && (calcul_initial[num_bloc2 + 2]->get_valeur() == "*" || calcul_initial[num_bloc2 + 2]->get_valeur() == "/" )){
+			while ( second_iteration && num_bloc2 + 2 < calcul_initial.size() && (calcul_initial[num_bloc2 + 2]->get_value() == "*" || calcul_initial[num_bloc2 + 2]->get_value() == "/" )){
 				num_bloc2 += 2;
 			}
 		}	
 	}
-	operator_array[num_ope]->set_ptr_bas1( calcul_initial[num_bloc1] );
-	operator_array[num_ope]->set_ptr_bas2( calcul_initial[num_bloc2] );
+	operator_array[num_ope]->set_ptr_below1( calcul_initial[num_bloc1] );
+	operator_array[num_ope]->set_ptr_below2( calcul_initial[num_bloc2] );
 }
 
 void seeker_and_fill(std::string symb1, std::string symb2, const DynArray<Bloc*>& operator_array, DynArray<Bloc*>& operator_array_ordonated, int& count){
 	for(int pos = 0; pos < operator_array.size(); ++pos){
-		if(operator_array[pos]->get_valeur() == symb1 || operator_array[pos]->get_valeur() == symb2){
+		if(operator_array[pos]->get_value() == symb1 || operator_array[pos]->get_value() == symb2){
 			operator_array_ordonated[count] = operator_array[pos];
 			++count;
 		}
@@ -92,10 +92,10 @@ DynArray<Bloc*> parser(const DynArray<Bloc*>& calcul_initial){
 
 	for( int num_ope = 0; num_ope < operator_array.size(); num_ope++ ){
 		
-		if ( operator_array[num_ope]->get_valeur() == "*" || operator_array[num_ope]->get_valeur() == "/" ){
+		if ( operator_array[num_ope]->get_value() == "*" || operator_array[num_ope]->get_value() == "/" ){
 			
-			std::cout << "la valeur de l'opérateur est : " << std::endl;
-			std::cout << operator_array[num_ope]->get_valeur() << std::endl;
+		//	std::cout << "operator value is : " << std::endl;
+		//	std::cout << operator_array[num_ope]->get_value() << std::endl;
 			link_bloc( operator_array, calcul_initial, num_ope, second_iteration);
 		}
 	}
@@ -104,15 +104,15 @@ DynArray<Bloc*> parser(const DynArray<Bloc*>& calcul_initial){
     bool first_second_iteration = true;
 	for( int num_ope = 0; num_ope < operator_array.size(); num_ope++ ){
         int count = 0;
-		if( operator_array[num_ope]->get_valeur() == "+" || operator_array[num_ope]->get_valeur() == "-") {
+		if( operator_array[num_ope]->get_value() == "+" || operator_array[num_ope]->get_value() == "-") {
 				
 			link_bloc( operator_array, calcul_initial, num_ope, second_iteration, first_second_iteration );
-			std::cout << operator_array[num_ope]->get_valeur() << std::endl;
+		//	std::cout << operator_array[num_ope]->get_value() << std::endl;
 			count += 1;
             first_second_iteration = false;
 		}
 	}
-	// we ordonate the operator_array in operator_array_ordonated.
+	// ordonate the operator_array in operator_array_ordonated.
 	ordonate_array(operator_array, operator_array_ordonated);
 	
 	return operator_array_ordonated;
