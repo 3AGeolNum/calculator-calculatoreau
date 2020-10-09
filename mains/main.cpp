@@ -24,6 +24,16 @@
  * \return EXIT_SUCCESS - Normal stop of the program.
  */
 
+//void affichage( DynArray< Bloc* > parsed_calcul ) {
+//	for (int i = 0; i < parsed_calcul.size(); i++) {
+//        std::cout << "Mon pointeur est : " << parsed_calcul[i] << std::endl;
+//        std::cout << "Mon pointeur bas 1 " << parsed_calcul[i]->get_ptr_bas1()
+//                  << std::endl;
+//        std::cout << "Mon pointeur bas 2 " << parsed_calcul[i]->get_ptr_bas2()
+//                  << std::endl;
+//	}
+//}
+
 int main(){
 	
 	// 1/-- Call to the checker
@@ -34,13 +44,21 @@ int main(){
 		Checker checke = Checker(in);
 		if (checke.complete_check()) {
 			// 2/-- Call to the lexer
-			DynArray<Bloc*> calcul_bloc = lexer(in);
+            DynArray< Bloc* > calcul_bloc = lexer( checke.get_input_modified());
+            //std::cout << "TEST " << checke.get_input_modified() << std::endl;
+			//if there is at least one operation
+			if (calcul_bloc.size()>1){
+				// 3/-- Call to the parser
+				DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
+                //affichage( parsed_calcul );
 
-			// 3/-- Call to the parser
-			DynArray<Bloc*> parsed_calcul = parser(calcul_bloc);
-
-			// 4/-- Call to the evaluator
-			std::cout << "Le resultat est : " << evaluator(parsed_calcul) << std::endl;
+				// 4/-- Call to the evaluator
+				std::cout << "The result is : " << evaluator(parsed_calcul) << std::endl;
+			}
+			//if only one number
+			else{
+                std::cout << "The result is : " << checke.get_input_modified() << std::endl;
+			}
 		}
 	}
 	return EXIT_SUCCESS;
