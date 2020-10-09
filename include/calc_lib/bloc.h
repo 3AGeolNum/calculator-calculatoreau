@@ -25,7 +25,7 @@ class Bloc{
 		\version {1.0}
 		\date October 2nd 2020
 		*/
-		Bloc( bool nature=false, std::string item="", Bloc* ptr_haut = nullptr , Bloc* ptr_bas1 = nullptr, Bloc* ptr_bas2 = nullptr);
+		Bloc( bool nature=false, std::string item="", Bloc* ptr_below1 = nullptr, Bloc* ptr_below2 = nullptr);
 		//! Bloc's destructor
 		/*!
 		\sa ~Bloc()
@@ -63,7 +63,7 @@ class Bloc{
 		\version {1.0}
 		\date October 2nd 2020
 		*/
-		void set_valeur(std::string item);
+		void set_value(std::string item);
 		
 		//! Get the value of the bloc.
 		/*!
@@ -73,7 +73,7 @@ class Bloc{
 		\version {1.0}
 		\date October 2nd 2020
 		*/
-		std::string get_valeur() { return item_; };
+		std::string get_value() { return item_; };
 		
 		//! Set the pointers of the bloc.
 		/*!
@@ -83,9 +83,8 @@ class Bloc{
 		\version {1.0}
 		\date October 2nd 2020
 		*/
-		void set_ptr_haut(Bloc* ptr);
-		void set_ptr_bas1(Bloc* ptr);
-		void set_ptr_bas2(Bloc* ptr);
+		void set_ptr_below1(Bloc* ptr);
+		void set_ptr_below2(Bloc* ptr);
 		
 		//! Get the pointers of the bloc.
 		/*!
@@ -95,15 +94,13 @@ class Bloc{
 		\version {1.0}
 		\date October 2nd 2020
 		*/
-		Bloc* get_ptr_haut();
-		Bloc* get_ptr_bas1();
-		Bloc* get_ptr_bas2();
+		Bloc* get_ptr_below1();
+		Bloc* get_ptr_below2();
 	private :
 		bool nature_;//false for nomber and true for operator
 		std::string item_;
-		Bloc* ptr_haut_;
-		Bloc* ptr_bas1_;
-		Bloc* ptr_bas2_;
+		Bloc* ptr_below1_;
+		Bloc* ptr_below2_;
 		
 };
 

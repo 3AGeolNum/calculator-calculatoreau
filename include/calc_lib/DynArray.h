@@ -12,7 +12,7 @@ public:
 
 
 	int size() const;
-	void resize(int new_size); //attention
+	void resize(int new_size); 
 	DynArray<T>& operator=(DynArray<T> const& other);
 	int push_back( const T& elt );
 	const T& operator[](int index ) const;

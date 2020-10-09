@@ -14,7 +14,7 @@ int main(){
 	for (int ia = 0 ; ia < retour.size(); ++ia){
 		
 
-			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_valeur() << std::endl;
+			std::cout << "Element de rang " << ia << " est " << retour[ia]->get_value() << std::endl;
 	}
 
 	return 0;

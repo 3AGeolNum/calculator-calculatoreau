@@ -31,7 +31,7 @@ DynArray<Bloc*> generate_operator_array( const DynArray<Bloc*>& calcul_initial )
 //! make links an operator with the blocs that will undergo the operation.
 /**
  * \fn void link_bloc( const DynArray<Bloc*>& operator_array, const DynArray<Bloc*>& calcul_initial,int num_ope, int num_bloc1, int num_bloc2 )
- * \brief edit ptr_bas1_ and ptr_bas2_ for an operator Bloc.
+ * \brief edit ptr_below1_ and ptr_below2_ for an operator Bloc.
  *
  * \param calcul_initial : Bloc array returned by the lexer.
  *		  operator_array : Bloc array whith just operators.

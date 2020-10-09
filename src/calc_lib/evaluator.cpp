@@ -15,29 +15,29 @@ std::string evaluator(const DynArray< Bloc* >& parsed_calcul )
 		 The expression atof interprete the content as a floating point number and returns its value as a double 
 		 */
 
-		double lhs = atof(((parsed_calcul[ia]->get_ptr_bas1())->get_valeur()).c_str()); // left term of the operation
-		double rhs = atof(((parsed_calcul[ia]->get_ptr_bas2())->get_valeur()).c_str()); // right term of the operation
+		double lhs = atof(((parsed_calcul[ia]->get_ptr_below1())->get_value()).c_str()); // left term of the operation
+		double rhs = atof(((parsed_calcul[ia]->get_ptr_below2())->get_value()).c_str()); // right term of the operation
 
 		/* loop to do all the operations in the order in which the blocks are received by the parser
 		*/
-		if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "+")
+		if (std::string(parsed_calcul[ia]->get_value(), 0, 1) == "+")
 		{
 			res = std::to_string(add(lhs, rhs));
 		}
-		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "-")
+		else if (std::string(parsed_calcul[ia]->get_value(), 0, 1) == "-")
 		{
 			res = std::to_string(sub(lhs, rhs));
 		}
-		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "*")
+		else if (std::string(parsed_calcul[ia]->get_value(), 0, 1) == "*")
 		{
 			res = std::to_string(mul(lhs, rhs));
 		}
-		else if (std::string(parsed_calcul[ia]->get_valeur(), 0, 1) == "/")
+		else if (std::string(parsed_calcul[ia]->get_value(), 0, 1) == "/")
 		{
 			res = std::to_string(div(lhs, rhs));
 		}
 
-		parsed_calcul[ia]->set_valeur(res);
+		parsed_calcul[ia]->set_value(res);
 	}
 	return res;
 }
