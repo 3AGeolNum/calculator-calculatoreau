@@ -66,7 +66,7 @@ void Checker::check_pos( int pos )
         // Here is the behaviour abour minus
         point_ = false;
         min_ += 1;
-        if( min_ >= 3 )
+        if( min_ >= 3 || (min_ > 1 && op_ != 0)  )
         { // Two minus can be used for exemple 8--2 which would be 8+2 so only
           // three minus is a bad situation
             std::cout << "Invalid argument. More too many minux operator"
